@@ -47,7 +47,6 @@ namespace CRMNamingAnalyzer
 
 			if (!arguments.First().ToString().ToCharArray().Any(char.IsUpper)) return;
 
-			//var diagnostic = Diagnostic.Create(Rule, arguments.First().GetLocation(), arguments.First().ToString());
 			var diagnostic = Diagnostic.Create(Rule, arguments.First().GetLocation(), arguments.First().Expression.GetFirstToken().ValueText);			
             context.ReportDiagnostic(diagnostic);
 		}
